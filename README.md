@@ -25,7 +25,7 @@ A Pomodoro Timer application to help manage work time effectively
 
 1. Clone the repository
 ```bash
-git clone [repository-url]
+git clone https://github.com/MegumiKatou02/PomoFocus.git
 cd pomofocus
 ```
 
