@@ -1,10 +1,10 @@
 <template>
   <div class="timer">
     <div class="timer-display">
-      {{ formatTime(timeRemaining) }}
+      {{ formatTime(props.timeRemaining) }}
     </div>
     <div class="timer-state">
-      {{ timerState === 'work' ? 'Thời gian làm việc' : 'Thời gian nghỉ ngơi' }}
+      {{ props.timerState === 'work' ? 'Thời gian làm việc' : 'Thời gian nghỉ ngơi' }}
     </div>
   </div>
 </template>
