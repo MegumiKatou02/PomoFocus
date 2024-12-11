@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue';
 import type { TimerState } from '@/types/timer';
 import { DEFAULT_SETTINGS, TIMER_STATES } from '@/constants/timer';
+import notificationSound from '@/assets/sounds/notification.wav'
 
 export function useTimer() {
   const timeRemaining = ref(DEFAULT_SETTINGS.workDuration);
@@ -53,8 +54,14 @@ export function useTimer() {
   };
 
   const playNotification = () => {
-    const audio = new Audio('/notification.mp3');
-    audio.play();
+    try {
+      const audio = new Audio(notificationSound);
+      audio.play().catch(error => {
+        console.error('Không thể phát âm thanh:', error);
+      });
+    } catch (error) {
+      console.error('Lỗi khởi tạo Audio:', error);
+    }
   };
 
   return {

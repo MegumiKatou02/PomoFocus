@@ -12,6 +12,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 import type { TimerState } from '@/types/timer';
+import notificationSound from '@/assets/sounds/notification.wav'
 
 const props = defineProps<{
   timeRemaining: number;
@@ -23,6 +24,17 @@ const formatTime = (seconds: number): string => {
   const remainingSeconds = seconds % 60;
   return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 };
+
+const playNotification = () => {
+  const audio = new Audio(notificationSound);
+  try {
+    audio.play().catch((error) => {
+      console.log('Error playing sound:', error);
+    });
+  } catch (error) {
+    console.log('Error creating audio:', error);
+  }
+}
 </script>
 
 <style scoped>
