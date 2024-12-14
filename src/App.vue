@@ -124,7 +124,7 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
-  color: #4CAF50;
+  color: #f44336;/*#4CAF50;*/
   margin-bottom: 3rem;
   font-weight: 700;
   line-height: 1.3;
@@ -132,7 +132,7 @@ h2 {
 
 h3 {
   font-size: 1.8rem;
-  color: #4CAF50;
+  color: #f44336;/*#4CAF50;*/
   margin: 2rem 0 1.5rem;
   font-weight: 600;
 }
